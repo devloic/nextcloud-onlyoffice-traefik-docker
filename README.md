@@ -4,11 +4,11 @@ A Docker stack for Nextcloud with Onlyoffice behind Traefik, with https !
 
 Change .env variable.
 
-create frontend and database network
+MOVED TO DOCKER-COMPOSE.YML //create frontend and database network
 
 ```
-docker network create --driver=overlay frontend
-docker network create --driver=overlay database
+//docker network create --driver=overlay frontend
+//docker network create --driver=overlay database
 ```
 
 Start Traefik :
