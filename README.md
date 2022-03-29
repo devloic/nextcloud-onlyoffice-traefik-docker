@@ -4,16 +4,16 @@ A Docker stack for Nextcloud with Onlyoffice behind Traefik, with https !
 
 Change .env variable.
 
-MOVED TO DOCKER-COMPOSE.YML //create frontend and database network
+MOVED TO DOCKER-COMPOSE.YML : create frontend and database network
 
 ```
-//docker network create --driver=overlay frontend
-//docker network create --driver=overlay database
+DONT RUN# docker network create --driver=overlay frontend
+DONT RUN# docker network create --driver=overlay database
 ```
 
 Start Traefik :
 ```
-docker-compose -f docker-compose-traefik up -d
+docker-compose -f docker-compose-traefik.yml up -d
 ```
 
 Start Nextcloud Stack
@@ -33,12 +33,12 @@ allow to set onlyoffice as local container. Within the nextcloud container :
 php occ --no-warnings config:system:set allow_local_remote_servers --value=true
 ```
 
-add hostame container and domain to trusted domain :
+MOVED TO .ENV AND DOCKER-COMPOSE.YML : add hostame container and domain to trusted domain :
 ```
-php occ --no-warnings config:system:set trusted_domains 1 --value="onlyoffice"
-php occ --no-warnings config:system:set trusted_domains 2 --value="nextcloud"
-php occ --no-warnings config:system:set trusted_domains 3 --value="<YOUR NEXTCLOUD_DOMAIN>"
-php occ --no-warnings config:system:set trusted_domains 4 --value="<YOUR ONLYOFFICE DOMAIN>"
+DONT RUN# php occ --no-warnings config:system:set trusted_domains 1 --value="onlyoffice"
+DONT RUN# php occ --no-warnings config:system:set trusted_domains 2 --value="nextcloud"
+DONT RUN# php occ --no-warnings config:system:set trusted_domains 3 --value="<YOUR NEXTCLOUD_DOMAIN>"
+DONT RUN# php occ --no-warnings config:system:set trusted_domains 4 --value="<YOUR ONLYOFFICE DOMAIN>"
 ```
 
 go to your nextlcoud instance, install it, go to app and add Onlyoffice from the app store.
