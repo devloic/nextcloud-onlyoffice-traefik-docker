@@ -21,7 +21,7 @@ Configure Nextcloud.
 Go inside the container :
 
 ```
-docker exec -u www-data -ti <nextcloud app container> bash
+docker exec -u www-data -ti nextcloud_app bash
 ```
 
 allow to set onlyoffice as local container. Within the nextcloud container :
